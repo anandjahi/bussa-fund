@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bussa Fund — Hero C</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal: '#0a9396',
+            aqua: '#94d2bd',
+            coral: '#e76f51',
+            amber: '#f4a261',
+            gold: '#e9c46a',
+            night: '#0b132b',
+            cream: '#faf8f5',
+          },
+          fontFamily: {
+            display: ['DM Serif Display', 'Georgia', 'serif'],
+            body: ['DM Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .anim { opacity: 0; transform: translateY(25px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .anim.vis { opacity: 1; transform: translateY(0); }
+    .slide-l { opacity: 0; transform: translateX(-30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .slide-l.vis { opacity: 1; transform: translateX(0); }
+    .slide-r { opacity: 0; transform: translateX(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .slide-r.vis { opacity: 1; transform: translateX(0); }
+    .d1 { transition-delay: 0.3s; }
+    .d2 { transition-delay: 0.6s; }
+    .nav-scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+
+    /* Hero C: Barbados bleeds from left edge, text overlaps at midpoint */
+    .hero-el { opacity: 0; transform: translateX(40px); transition: opacity 0.9s ease, transform 0.9s ease; }
+    .hero-el.show { opacity: 1; transform: translateX(0); }
+    .hero-bim { opacity: 0; transform: translateX(-60px); transition: opacity 1.4s ease, transform 1.4s ease; }
+    .hero-bim.show { opacity: 1; transform: translateX(0); }
+    .hero-line { opacity: 0; transform: scaleX(0); transform-origin: left; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .hero-line.show { opacity: 1; transform: scaleX(1); }
+  </style>
+  <script src="https://tally.so/widgets/embed.js"></script>
+</head>
+<body class="bg-white text-night antialiased">
+
+  <!-- Sticky Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-5xl mx-auto px-8 py-4 flex items-center justify-between">
+      <a href="#" class="font-display text-xl text-night">The Bussa Fund</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about" class="font-body text-sm font-medium text-night/60 hover:text-night transition-colors">About</a>
+        <a href="#beyond-remittances" class="font-body text-sm font-medium text-night/60 hover:text-night transition-colors">Beyond Remittances</a>
+        <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-coral hover:bg-coral/90 text-white font-body font-semibold text-sm px-5 py-2.5 transition-all duration-200">Fill Out the Interest Form</button>
+      </div>
+      <button class="md:hidden text-night/60" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-8 pb-4">
+      <a href="#about" class="block py-2 font-body text-sm text-night/60 hover:text-night">About</a>
+      <a href="#beyond-remittances" class="block py-2 font-body text-sm text-night/60 hover:text-night">Beyond Remittances</a>
+      <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="mt-2 bg-coral hover:bg-coral/90 text-white font-body font-semibold text-sm px-5 py-2.5 w-full transition-all duration-200">Fill Out the Interest Form</button>
+    </div>
+  </nav>
+
+  <!-- HERO C: Barbados bleeds from left, text at intersection -->
+  <header class="min-h-screen flex items-center relative overflow-hidden bg-white pt-16">
+    <!-- Barbados — bleeding from left edge, partially off-screen -->
+    <div class="absolute -left-[8%] top-1/2 -translate-y-1/2 h-[90vh] hero-bim" id="hero-bim">
+      <svg viewBox="0 0 240 300" class="h-full">
+        <path d="M 33.2,134.3 L 33.8,173.3 L 43.2,197.9 L 41.2,203.4 L 45.2,206.0 L 41.1,206.1 L 41.6,210.8 L 38.9,205.9 L 39.4,209.9 L 57.8,219.0 L 55.6,230.0 L 95.8,242.5 L 111.9,242.2 L 117.3,246.0 L 122.0,256.6 L 127.0,258.8 L 145.8,252.7 L 154.1,239.9 L 161.0,239.5 L 187.4,219.0 L 207.8,191.1 L 214.2,177.3 L 214.7,164.3 L 206.5,155.5 L 195.8,155.5 L 184.2,140.2 L 176.2,142.9 L 168.2,135.3 L 160.9,133.2 L 159.1,128.0 L 153.3,127.9 L 142.7,118.2 L 124.7,109.9 L 95.0,64.9 L 93.0,54.3 L 85.0,42.3 L 88.1,40.3 L 84.4,37.1 L 86.0,34.6 L 55.4,10.7 L 35.5,17.8 L 24.0,35.8 L 25.1,56.2 L 28.9,72.4 L 31.8,73.8 L 28.8,91.2 L 33.2,134.3 Z" fill="#94d2bd" opacity="0.2"/>
+        <path d="M 33.2,134.3 L 33.8,173.3 L 43.2,197.9 L 41.2,203.4 L 45.2,206.0 L 41.1,206.1 L 41.6,210.8 L 38.9,205.9 L 39.4,209.9 L 57.8,219.0 L 55.6,230.0 L 95.8,242.5 L 111.9,242.2 L 117.3,246.0 L 122.0,256.6 L 127.0,258.8 L 145.8,252.7 L 154.1,239.9 L 161.0,239.5 L 187.4,219.0 L 207.8,191.1 L 214.2,177.3 L 214.7,164.3 L 206.5,155.5 L 195.8,155.5 L 184.2,140.2 L 176.2,142.9 L 168.2,135.3 L 160.9,133.2 L 159.1,128.0 L 153.3,127.9 L 142.7,118.2 L 124.7,109.9 L 95.0,64.9 L 93.0,54.3 L 85.0,42.3 L 88.1,40.3 L 84.4,37.1 L 86.0,34.6 L 55.4,10.7 L 35.5,17.8 L 24.0,35.8 L 25.1,56.2 L 28.9,72.4 L 31.8,73.8 L 28.8,91.2 L 33.2,134.3 Z" fill="none" stroke="#0a9396" stroke-width="2" opacity="0.25"/>
+      </svg>
+    </div>
+
+    <!-- Text — right side, slides in from right -->
+    <div class="max-w-5xl mx-auto px-8 w-full relative z-10">
+      <div class="md:ml-[40%] lg:ml-[35%] max-w-lg">
+        <p class="font-body text-coral font-semibold tracking-[0.2em] uppercase text-sm mb-5 hero-el" id="h1">The Bussa Fund</p>
+        <h1 class="font-display text-5xl md:text-7xl leading-[1.05] mb-6">
+          <span class="hero-el block" id="h2a">Unleashing the</span>
+          <span class="hero-el block" id="h2b">power of the</span>
+          <em class="text-teal hero-el block" id="h2c">diaspora</em>
+        </h1>
+        <div class="w-12 h-0.5 bg-coral mb-5 hero-line" id="h3"></div>
+        <p class="font-body text-lg text-night/50 max-w-md leading-relaxed hero-el" id="h4">To invest in a resilient, sustainable, and equitable Barbados</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="bg-cream scroll-mt-16 relative overflow-hidden">
+    <svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[80%] opacity-[0.07] pointer-events-none" viewBox="0 0 200 300" fill="#0a9396">
+      <path d="M 18.6,125.9 L 19.2,162.5 L 28.0,185.5 L 26.1,190.7 L 29.9,193.1 L 26.0,193.2 L 26.5,197.6 L 24.0,193.0 L 24.4,196.8 L 41.7,205.3 L 39.6,215.6 L 77.3,227.3 L 92.4,227.1 L 97.5,230.6 L 101.9,240.6 L 106.6,242.6 L 124.2,236.9 L 132.0,224.9 L 138.4,224.5 L 163.2,205.3 L 182.3,179.2 L 188.3,166.2 L 188.8,154.0 L 181.1,145.8 L 171.1,145.8 L 160.2,131.4 L 152.7,134.0 L 145.2,126.8 L 138.3,124.9 L 136.7,120.0 L 131.2,119.9 L 121.3,110.8 L 104.4,103.0 L 76.6,60.8 L 74.7,50.9 L 67.2,39.7 L 70.1,37.8 L 66.6,34.8 L 68.1,32.4 L 39.4,10.0 L 20.8,16.7 L 10.0,33.6 L 11.0,52.7 L 14.6,67.9 L 17.3,69.2 L 14.5,85.5 L 18.6,125.9 Z"/>
+    </svg>
+    <div class="max-w-5xl mx-auto px-8 py-20 relative z-10">
+      <p class="font-body text-coral font-semibold tracking-[0.15em] uppercase text-sm mb-4 anim">About</p>
+      <p class="font-display text-2xl md:text-3xl text-night leading-snug mb-8 anim">There is currently no way for the Barbadian diaspora to pool its funds and invest them in ways that earn a return and build wealth and resilience for communities in Barbados.</p>
+      <p class="font-display text-2xl md:text-3xl text-coral leading-snug mb-8 anim d1">The Bussa Fund is trying to change that.</p>
+      <div class="anim d2">
+        <p class="font-body text-lg text-night/70 leading-relaxed mb-6">By supporting initiatives like <span class="text-teal font-medium">homeownership for working and middle class families</span>, <span class="text-teal font-medium">locally-owned businesses</span>, and <span class="text-teal font-medium">green infrastructure</span>, the Bussa Fund aims to unleash the power of the diaspora to finance projects that contribute to a resilient, sustainable, and equitable Barbados.</p>
+        <p class="font-body text-lg text-night/70 leading-relaxed mb-6">Currently in a research phase, we are collecting non-binding commitments for investment to show that the Barbadian diaspora is ready, willing, and able.</p>
+        <p class="font-body text-lg text-night/70 leading-relaxed mb-10"><strong class="text-night font-semibold">If you are a member of the Barbadian diaspora (or just someone who loves the island) and want to invest in a resilient, sustainable, and equitable Barbados, please fill out our interest form.</strong></p>
+        <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-coral hover:bg-coral/90 text-white font-body font-semibold px-8 py-4 text-lg transition-all duration-200">Fill Out the Interest Form &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beyond Remittances -->
+  <section id="beyond-remittances" class="bg-night text-white scroll-mt-16">
+    <div class="max-w-5xl mx-auto px-8 py-20">
+      <p class="font-body text-coral font-semibold tracking-[0.15em] uppercase text-sm mb-6 slide-l">Beyond Remittances</p>
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div class="slide-l">
+          <h2 class="font-display text-4xl md:text-5xl leading-tight mb-6">Our dollars could be doing more.</h2>
+          <p class="font-body text-lg text-white/70 leading-relaxed">Every year, the Barbadian diaspora sends over $100 million to Barbados. These gifts are a critical lifeline to the island, but they have limitations.</p>
+        </div>
+        <div class="space-y-5 slide-r">
+          <div class="border-l-2 border-teal pl-5">
+            <p class="font-body text-white/70 leading-relaxed">Instead of going towards things that build generational wealth and economic self-sufficiency almost all remittances go towards covering everyday expenses.</p>
+          </div>
+          <div class="border-l-2 border-teal pl-5">
+            <p class="font-body text-white/70 leading-relaxed">Gifts sent home reduce the Barbadian diaspora's ability to save, invest, and build generational wealth ourselves.</p>
+          </div>
+          <div class="border-l-2 border-teal pl-5">
+            <p class="font-body text-white/70 leading-relaxed">Individual remittances are just that: individual. Rather than pooling our resources and achieving economies of scale, each family is left to fend for themselves.</p>
+          </div>
+        </div>
+      </div>
+      <p class="font-body text-lg text-white/70 leading-relaxed mt-10">The Bussa Fund aims to address these shortcomings by empowering the Barbadian diaspora to pool its resources and invest in projects that build a resilient, sustainable, and equitable Barbados.</p>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="bg-cream">
+    <div class="max-w-5xl mx-auto px-8 py-16 text-center">
+      <div class="anim">
+        <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-coral hover:bg-coral/90 text-white font-body font-semibold px-10 py-4 text-lg transition-all duration-200">Fill Out the Interest Form &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center py-8 text-sm text-night/30 font-body border-t border-night/10">
+    &copy; 2025 The Bussa Fund
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('nav-scrolled', window.scrollY > 50);
+    });
+
+    // Hero C: Barbados sweeps in from left, then each line of text slides in from right
+    const delays = [0, 1000, 1800, 2400, 3000, 3600, 4200];
+    const ids = ['hero-bim', 'h1', 'h2a', 'h2b', 'h2c', 'h3', 'h4'];
+    ids.forEach((id, i) => {
+      setTimeout(() => document.getElementById(id).classList.add('show'), delays[i]);
+    });
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.anim, .slide-l, .slide-r').forEach(el => obs.observe(el));
+    document.querySelectorAll('#mobile-menu a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden'));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(35,8)">
+    <rect x="0" y="0" width="50" height="64" rx="6" fill="none" stroke="#0a9396" stroke-width="2"/>
+    <text x="8" y="52" font-family="Playfair Display, Georgia, serif" font-weight="900" font-size="54" fill="#0a9396">B</text>
+    <path d="M0,38 Q12,30 25,38 Q38,46 50,38" stroke="#e76f51" stroke-width="2.5" fill="none"/>
+  </g>
+  <text x="100" y="30" font-family="Playfair Display, Georgia, serif" font-weight="900" font-size="14" fill="white" letter-spacing="4">THE BUSSA</text>
+  <text x="100" y="55" font-family="Playfair Display, Georgia, serif" font-weight="900" font-size="26" fill="white">FUND</text>
+</svg>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bussa Fund</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            deep: '#162447',
+            teal: '#0a9396',
+            aqua: '#94d2bd',
+            coral: '#e76f51',
+            gold: '#e9c46a',
+            cream: '#fdf6ec',
+          },
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .anim { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .anim.vis { opacity: 1; transform: translateY(0); }
+    .anim-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .anim-left.vis { opacity: 1; transform: translateX(0); }
+    .anim-right { opacity: 0; transform: translateX(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .anim-right.vis { opacity: 1; transform: translateX(0); }
+    .delay-1 { transition-delay: 0.15s; }
+    .delay-2 { transition-delay: 0.3s; }
+    .delay-3 { transition-delay: 0.45s; }
+  </style>
+</head>
+<body class="bg-cream text-midnight antialiased">
+
+  <!-- V2 Option 2: "Warm Fraunces + Island Illustrations" -->
+  <!-- Fraunces display font, warm cream base, coral + gold accents, Barbados outline as hero illustration -->
+
+  <header class="bg-midnight text-white min-h-[85vh] flex items-center relative overflow-hidden">
+    <!-- Large Barbados silhouette -->
+    <svg class="absolute right-[-5%] md:right-[5%] top-1/2 -translate-y-1/2 h-[90%] opacity-[0.08]" viewBox="0 0 200 500" fill="white">
+      <path d="M 18.6,225.9 L 19.2,262.5 L 28.0,285.5 L 26.1,290.7 L 29.9,293.1 L 26.0,293.2 L 26.5,297.6 L 24.0,293.0 L 24.4,296.8 L 41.7,305.3 L 39.6,315.6 L 77.3,327.3 L 92.4,327.1 L 97.5,330.6 L 101.9,340.6 L 106.6,342.6 L 124.2,336.9 L 132.0,324.9 L 138.4,324.5 L 163.2,305.3 L 182.3,279.2 L 188.3,266.2 L 188.8,254.0 L 181.1,245.8 L 171.1,245.8 L 160.2,231.4 L 152.7,234.0 L 145.2,226.8 L 138.3,224.9 L 136.7,220.0 L 131.2,219.9 L 121.3,210.8 L 104.4,203.0 L 76.6,160.8 L 74.7,150.9 L 67.2,139.7 L 70.1,137.8 L 66.6,134.8 L 68.1,132.4 L 39.4,110.0 L 20.8,116.7 L 10.0,133.6 L 11.0,152.7 L 14.6,167.9 L 17.3,169.2 L 14.5,185.5 L 18.6,225.9 Z"/>
+    </svg>
+    <!-- Decorative dots pattern (like Grassroots style) -->
+    <svg class="absolute top-8 right-8 w-24 opacity-20" viewBox="0 0 100 100">
+      <g fill="#e76f51">
+        <circle cx="10" cy="10" r="3"/><circle cx="30" cy="10" r="3"/><circle cx="50" cy="10" r="3"/><circle cx="70" cy="10" r="3"/>
+        <circle cx="10" cy="30" r="3"/><circle cx="30" cy="30" r="3"/><circle cx="50" cy="30" r="3"/><circle cx="70" cy="30" r="3"/>
+        <circle cx="10" cy="50" r="3"/><circle cx="30" cy="50" r="3"/><circle cx="50" cy="50" r="3"/><circle cx="70" cy="50" r="3"/>
+        <circle cx="10" cy="70" r="3"/><circle cx="30" cy="70" r="3"/><circle cx="50" cy="70" r="3"/><circle cx="70" cy="70" r="3"/>
+      </g>
+    </svg>
+
+    <div class="max-w-4xl mx-auto px-8 py-20 relative z-10 w-full">
+      <!-- Logo: Palm tree mark -->
+      <div class="mb-10">
+        <svg viewBox="0 0 60 60" class="w-14">
+          <path d="M28,55 Q29,35 31,20" stroke="#e76f51" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <g fill="none" stroke="#0a9396" stroke-width="1.5" stroke-linecap="round">
+            <path d="M31,20 Q22,8 10,12"/>
+            <path d="M31,20 Q26,5 18,2"/>
+            <path d="M31,20 Q36,5 44,2"/>
+            <path d="M31,20 Q40,8 52,12"/>
+            <path d="M31,20 Q31,3 31,0"/>
+          </g>
+          <path d="M15,55 Q30,48 45,55" stroke="#94d2bd" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+      <p class="font-body text-sm font-semibold text-coral tracking-[0.2em] uppercase mb-4 anim vis">Diaspora-Powered Investment</p>
+      <h1 class="font-display text-5xl md:text-7xl lg:text-[5.5rem] font-black leading-[0.95] mb-8">The Bussa<br>Fund</h1>
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-16 h-1 bg-coral rounded-full"></div>
+        <div class="w-8 h-1 bg-gold rounded-full"></div>
+        <div class="w-4 h-1 bg-teal rounded-full"></div>
+      </div>
+      <p class="font-display text-xl md:text-2xl text-white/60 italic max-w-lg leading-relaxed">Unleashing the power of the diaspora to invest in a resilient, sustainable, and equitable Barbados</p>
+    </div>
+
+    <!-- Bottom wave transition -->
+    <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,40 Q360,0 720,40 Q1080,80 1440,40 L1440,80 L0,80 Z" fill="#fdf6ec"/>
+    </svg>
+  </header>
+
+  <!-- Pitch -->
+  <section class="max-w-4xl mx-auto px-8 pt-12 pb-20">
+    <div class="anim">
+      <p class="font-body text-xl text-midnight/70 leading-relaxed mb-6">By supporting initiatives like homeownership for working and middle class families, locally-owned businesses, and green infrastructure, the Bussa Fund aims to unleash the power of the diaspora to help Barbados thrive.</p>
+      <p class="font-body text-xl text-midnight/70 leading-relaxed mb-10">If you are a member of the Bajan diaspora (or just someone who loves the island) and want to invest in a resilient, sustainable, and equitable Barbados, please fill out our interest form.</p>
+      <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-coral hover:bg-red-600 text-white font-body font-semibold px-10 py-4 rounded-sm text-lg transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-coral/20">Fill Out the Interest Form &rarr;</button>
+    </div>
+  </section>
+
+  <!-- Illustration divider: Ocean waves with coconuts -->
+  <div class="max-w-4xl mx-auto px-8 py-4 anim">
+    <svg viewBox="0 0 900 80" class="w-full">
+      <path d="M0,40 Q75,20 150,40 Q225,60 300,40 Q375,20 450,40 Q525,60 600,40 Q675,20 750,40 Q825,60 900,40" stroke="#0a9396" stroke-width="2" fill="none" opacity="0.2"/>
+      <path d="M0,50 Q75,30 150,50 Q225,70 300,50 Q375,30 450,50 Q525,70 600,50 Q675,30 750,50 Q825,70 900,50" stroke="#94d2bd" stroke-width="1.5" fill="none" opacity="0.15"/>
+      <!-- Coconuts -->
+      <g opacity="0.2">
+        <circle cx="250" cy="35" r="6" fill="#e76f51"/>
+        <circle cx="258" cy="32" r="5" fill="#e9c46a"/>
+        <circle cx="254" cy="28" r="4.5" fill="#e76f51" opacity="0.7"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Case Statement -->
+  <section class="bg-deep text-white relative overflow-hidden">
+    <!-- Background palm fronds -->
+    <svg class="absolute top-0 left-0 w-40 opacity-[0.04]" viewBox="0 0 150 300">
+      <g stroke="white" stroke-width="2" fill="none">
+        <path d="M75,300 Q70,200 75,100"/>
+        <path d="M75,100 Q40,50 10,60"/>
+        <path d="M75,100 Q50,40 30,20"/>
+        <path d="M75,100 Q100,40 120,20"/>
+        <path d="M75,100 Q110,50 140,60"/>
+      </g>
+    </svg>
+
+    <div class="max-w-4xl mx-auto px-8 py-20 relative z-10">
+      <h2 class="font-display text-4xl md:text-5xl font-black leading-tight mb-10 anim">Our dollars could be<br>doing more.</h2>
+      <p class="font-body text-lg text-white/60 leading-relaxed mb-10 max-w-2xl anim">Every year, the Bajan diaspora sends over $100 million to Barbados. These gifts are a critical lifeline to the island, but they have limitations.</p>
+
+      <div class="space-y-6 mb-12">
+        <div class="border-l-3 border-teal pl-6 anim-left delay-1">
+          <p class="font-body text-white/70 leading-relaxed">For one, instead of going towards things that build generational wealth and economic self-sufficiency almost all remittances go towards covering everyday expenses.</p>
+        </div>
+        <div class="border-l-3 border-coral pl-6 anim-left delay-2">
+          <p class="font-body text-white/70 leading-relaxed">Similarly, gifts sent home reduce the Bajan diaspora's ability to save, invest, and build generational wealth ourselves.</p>
+        </div>
+        <div class="border-l-3 border-gold pl-6 anim-left delay-3">
+          <p class="font-body text-white/70 leading-relaxed">Finally, individual remittances are just that: individual. Rather than pooling our resources and achieving economies of scale, each family is left to fend for themselves.</p>
+        </div>
+      </div>
+
+      <!-- Island illustration inside dark section -->
+      <div class="flex justify-center my-12 anim">
+        <svg viewBox="0 0 300 200" class="w-64 opacity-30">
+          <!-- Sunset scene -->
+          <circle cx="150" cy="80" r="40" fill="#e76f51" opacity="0.6"/>
+          <rect x="0" y="100" width="300" height="100" fill="#0b132b"/>
+          <path d="M80,100 Q120,70 160,80 Q180,85 200,100" fill="#162447"/>
+          <path d="M0,120 Q75,105 150,120 Q225,135 300,120" stroke="#0a9396" stroke-width="1.5" fill="none"/>
+          <path d="M0,135 Q75,120 150,135 Q225,150 300,135" stroke="#94d2bd" stroke-width="1" fill="none" opacity="0.5"/>
+          <!-- Palm on island -->
+          <g transform="translate(140,68)">
+            <path d="M5,32 Q6,15 8,0" stroke="#94d2bd" stroke-width="1.5" fill="none"/>
+            <path d="M8,0 Q2,-10 -5,-7" stroke="#94d2bd" stroke-width="1" fill="none"/>
+            <path d="M8,0 Q14,-10 20,-7" stroke="#94d2bd" stroke-width="1" fill="none"/>
+            <path d="M8,0 Q8,-12 8,-15" stroke="#94d2bd" stroke-width="1" fill="none"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Callout -->
+  <section class="bg-teal text-white">
+    <div class="max-w-4xl mx-auto px-8 py-16">
+      <p class="font-display text-2xl md:text-3xl font-bold leading-relaxed text-center anim">There is no way for the Bajan diaspora to pool its funds and invest them in ways that earn a return and build wealth for communities in Barbados.</p>
+    </div>
+  </section>
+
+  <!-- Closing section -->
+  <section class="max-w-4xl mx-auto px-8 py-20">
+    <div class="anim">
+      <p class="font-display text-3xl md:text-4xl font-black text-coral mb-8">The Bussa Fund is trying to change that.</p>
+      <p class="font-body text-lg text-midnight/70 leading-relaxed mb-6">Currently in a research phase, the Bussa Fund's goals are to raise investment capital from the Bajan diaspora to finance projects that contribute to a resilient, sustainable, and equitable Barbados. By supporting things like homeownership for working and middle class families, locally-owned businesses, and green infrastructure, the Bussa Fund aims to unleash the power of the diaspora to help Barbados thrive.</p>
+      <p class="font-body text-lg text-midnight/70 leading-relaxed mb-10">We are in the process of collecting non-binding commitments for investment to show that the Bajan diaspora is ready, willing, and able. <strong class="text-midnight font-semibold">If you are a member of the Bajan diaspora (or just someone who loves the island) and want to invest in a resilient, sustainable, and equitable Barbados, please fill out our interest form.</strong></p>
+      <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-coral hover:bg-red-600 text-white font-body font-semibold px-10 py-4 rounded-sm text-lg transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-coral/20">Fill Out the Interest Form &rarr;</button>
+    </div>
+  </section>
+
+  <footer class="text-center py-8 text-sm text-midnight/30 font-body border-t border-midnight/5">
+    &copy; 2025 The Bussa Fund
+  </footer>
+
+  <script src="https://tally.so/widgets/embed.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('vis'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.anim, .anim-left, .anim-right').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

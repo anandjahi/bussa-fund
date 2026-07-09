@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bussa Fund</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            night: '#0f1923',
+            steel: '#1a2634',
+            teal: '#0a9396',
+            aqua: '#94d2bd',
+            sunset: '#e76f51',
+            marigold: '#e9c46a',
+            linen: '#faf6f0',
+          },
+          fontFamily: {
+            display: ['Libre Baskerville', 'Georgia', 'serif'],
+            body: ['Source Sans 3', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .anim { opacity: 0; transform: translateY(25px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .anim.vis { opacity: 1; transform: translateY(0); }
+    .anim-left { opacity: 0; transform: translateX(-25px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .anim-left.vis { opacity: 1; transform: translateX(0); }
+    .d1 { transition-delay: 0.15s; } .d2 { transition-delay: 0.3s; } .d3 { transition-delay: 0.45s; }
+  </style>
+</head>
+<body class="bg-linen text-night antialiased">
+
+  <!-- V2 Option 4: "Split Hero + Barbados Map Illustration" -->
+  <!-- Libre Baskerville display, asymmetric layout, island illustration in hero, warm linen -->
+
+  <header class="bg-night text-white relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-8">
+      <div class="grid md:grid-cols-2 gap-8 min-h-[90vh] items-center">
+        <!-- Left: Text -->
+        <div class="py-20 relative z-10">
+          <!-- Logo: Bridging waves -->
+          <div class="mb-10">
+            <svg viewBox="0 0 60 40" class="w-14">
+              <path d="M5,10 Q15,0 25,10 Q35,20 45,10" stroke="#0a9396" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M15,28 Q25,18 35,28 Q45,38 55,28" stroke="#e76f51" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <circle cx="25" cy="10" r="2.5" fill="#94d2bd"/>
+              <circle cx="35" cy="28" r="2.5" fill="#e9c46a"/>
+            </svg>
+          </div>
+          <p class="font-body text-sm font-semibold text-teal tracking-[0.2em] uppercase mb-4">The Bussa Fund</p>
+          <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">Unleashing the power of the <em class="text-sunset not-italic">diaspora</em></h1>
+          <p class="font-body text-lg text-white/50 leading-relaxed max-w-md mb-8">To invest in a resilient, sustainable, and equitable Barbados</p>
+          <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-sunset hover:bg-orange-600 text-white font-body font-semibold px-8 py-3.5 text-base transition-all duration-200 hover:-translate-y-0.5">Get Involved &rarr;</button>
+        </div>
+        <!-- Right: Barbados illustration -->
+        <div class="hidden md:flex items-center justify-center relative">
+          <svg viewBox="0 0 300 500" class="h-[70vh] opacity-90">
+            <defs>
+              <clipPath id="barbados-clip">
+                <path d="M 27.9,213.9 L 28.8,268.8 L 42.0,303.2 L 39.2,311.0 L 44.8,314.6 L 39.0,314.8 L 39.8,321.4 L 36.0,314.5 L 36.6,320.2 L 62.6,333.0 L 59.4,348.4 L 115.9,366.0 L 138.6,365.6 L 146.2,370.9 L 152.9,385.9 L 159.9,388.9 L 186.3,380.4 L 198.0,362.4 L 207.6,361.8 L 244.8,333.0 L 273.5,293.8 L 282.5,274.3 L 283.2,256.0 L 271.6,243.7 L 256.6,243.7 L 240.3,222.1 L 229.0,226.0 L 217.8,215.2 L 207.5,212.4 L 205.0,205.0 L 196.8,204.9 L 181.9,191.2 L 156.6,179.5 L 114.9,116.2 L 112.1,101.3 L 100.8,84.6 L 105.1,81.7 L 99.9,77.2 L 102.1,73.6 L 59.1,40.0 L 31.2,50.0 L 15.0,75.4 L 16.5,104.1 L 21.9,126.9 L 26.0,128.8 L 21.8,153.2 L 27.9,213.9 Z"/>
+              </clipPath>
+            </defs>
+            <!-- Island with scene inside (Salmon Returns inspired) -->
+            <g clip-path="url(#barbados-clip)">
+              <rect width="300" height="600" fill="#1a2634"/>
+              <!-- Sky gradient -->
+              <rect x="0" y="0" width="300" height="300" fill="#1a2634"/>
+              <!-- Sun -->
+              <circle cx="180" cy="150" r="50" fill="#e76f51" opacity="0.5"/>
+              <circle cx="180" cy="150" r="35" fill="#e9c46a" opacity="0.4"/>
+              <!-- Hills -->
+              <path d="M60,280 Q120,220 180,260 Q240,230 300,270 L300,350 L60,350 Z" fill="#0a9396" opacity="0.3"/>
+              <!-- Water -->
+              <rect x="60" y="340" width="250" height="260" fill="#0a9396" opacity="0.15"/>
+              <path d="M60,370 Q120,355 180,370 Q240,385 300,370" stroke="#94d2bd" stroke-width="1.5" fill="none" opacity="0.3"/>
+              <path d="M60,400 Q120,385 180,400 Q240,415 300,400" stroke="#94d2bd" stroke-width="1" fill="none" opacity="0.2"/>
+              <path d="M60,430 Q120,415 180,430 Q240,445 300,430" stroke="#94d2bd" stroke-width="1" fill="none" opacity="0.15"/>
+              <!-- Sugarcane stalks -->
+              <g opacity="0.4">
+                <line x1="100" y1="340" x2="105" y2="240" stroke="#94d2bd" stroke-width="2"/>
+                <path d="M105,260 Q95,250 105,245" stroke="#94d2bd" stroke-width="1" fill="none"/>
+                <path d="M105,280 Q115,270 105,265" stroke="#94d2bd" stroke-width="1" fill="none"/>
+                <line x1="130" y1="340" x2="128" y2="255" stroke="#94d2bd" stroke-width="2"/>
+                <path d="M128,275 Q118,265 128,260" stroke="#94d2bd" stroke-width="1" fill="none"/>
+              </g>
+              <!-- Windmill -->
+              <g transform="translate(220,240)" opacity="0.4">
+                <path d="M-3,40 L-1,0 L1,0 L3,40" fill="#1a2634"/>
+                <g fill="none" stroke="#94d2bd" stroke-width="1.2" stroke-linecap="round">
+                  <path d="M0,0 Q-5,-15 0,-13"/>
+                  <path d="M0,0 Q15,-5 13,0"/>
+                  <path d="M0,0 Q5,15 0,13"/>
+                  <path d="M0,0 Q-15,5 -13,0"/>
+                </g>
+                <circle cx="0" cy="0" r="2" fill="#94d2bd"/>
+              </g>
+            </g>
+            <!-- Island outline -->
+            <path d="M 27.9,213.9 L 28.8,268.8 L 42.0,303.2 L 39.2,311.0 L 44.8,314.6 L 39.0,314.8 L 39.8,321.4 L 36.0,314.5 L 36.6,320.2 L 62.6,333.0 L 59.4,348.4 L 115.9,366.0 L 138.6,365.6 L 146.2,370.9 L 152.9,385.9 L 159.9,388.9 L 186.3,380.4 L 198.0,362.4 L 207.6,361.8 L 244.8,333.0 L 273.5,293.8 L 282.5,274.3 L 283.2,256.0 L 271.6,243.7 L 256.6,243.7 L 240.3,222.1 L 229.0,226.0 L 217.8,215.2 L 207.5,212.4 L 205.0,205.0 L 196.8,204.9 L 181.9,191.2 L 156.6,179.5 L 114.9,116.2 L 112.1,101.3 L 100.8,84.6 L 105.1,81.7 L 99.9,77.2 L 102.1,73.6 L 59.1,40.0 L 31.2,50.0 L 15.0,75.4 L 16.5,104.1 L 21.9,126.9 L 26.0,128.8 L 21.8,153.2 L 27.9,213.9 Z" fill="none" stroke="#94d2bd" stroke-width="1.5" opacity="0.3"/>
+            <!-- Diaspora connection lines -->
+            <g stroke="#e76f51" stroke-width="1" stroke-dasharray="4,6" opacity="0.25">
+              <line x1="100" y1="150" x2="30" y2="80"/>
+              <line x1="80" y1="300" x2="20" y2="320"/>
+              <line x1="210" y1="200" x2="280" y2="150"/>
+              <line x1="220" y1="400" x2="280" y2="430"/>
+            </g>
+            <g fill="#e76f51" opacity="0.3">
+              <circle cx="30" cy="80" r="4"/>
+              <circle cx="20" cy="320" r="4"/>
+              <circle cx="280" cy="150" r="4"/>
+              <circle cx="280" cy="430" r="4"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Pitch -->
+  <section class="max-w-4xl mx-auto px-8 py-20">
+    <div class="anim">
+      <p class="font-body text-xl text-night/70 leading-relaxed mb-6">By supporting initiatives like homeownership for working and middle class families, locally-owned businesses, and green infrastructure, the Bussa Fund aims to unleash the power of the diaspora to help Barbados thrive.</p>
+      <p class="font-body text-xl text-night/70 leading-relaxed mb-10">If you are a member of the Bajan diaspora (or just someone who loves the island) and want to invest in a resilient, sustainable, and equitable Barbados, please fill out our interest form.</p>
+      <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-sunset hover:bg-orange-600 text-white font-body font-semibold px-10 py-4 text-lg transition-all duration-200 hover:-translate-y-0.5">Fill Out the Interest Form &rarr;</button>
+    </div>
+  </section>
+
+  <!-- Case -->
+  <section class="bg-night text-white">
+    <div class="max-w-4xl mx-auto px-8 py-20">
+      <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight mb-4 anim">Our dollars could be doing more.</h2>
+      <p class="font-body text-lg text-white/50 leading-relaxed mb-10 max-w-2xl anim">Every year, the Bajan diaspora sends over $100 million to Barbados. These gifts are a critical lifeline to the island, but they have limitations.</p>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6 anim-left d1">
+          <span class="inline-block w-8 h-8 rounded-lg bg-teal/20 text-teal font-body font-bold text-sm flex items-center justify-center mb-4">01</span>
+          <p class="font-body text-white/60 leading-relaxed">Instead of going towards things that build generational wealth and economic self-sufficiency almost all remittances go towards covering everyday expenses.</p>
+        </div>
+        <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6 anim-left d2">
+          <span class="inline-block w-8 h-8 rounded-lg bg-sunset/20 text-sunset font-body font-bold text-sm flex items-center justify-center mb-4">02</span>
+          <p class="font-body text-white/60 leading-relaxed">Gifts sent home reduce the Bajan diaspora's ability to save, invest, and build generational wealth ourselves.</p>
+        </div>
+        <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6 anim-left d3">
+          <span class="inline-block w-8 h-8 rounded-lg bg-marigold/20 text-marigold font-body font-bold text-sm flex items-center justify-center mb-4">03</span>
+          <p class="font-body text-white/60 leading-relaxed">Individual remittances are just that: individual. Rather than pooling our resources, each family is left to fend for themselves.</p>
+        </div>
+      </div>
+
+      <div class="border border-teal/30 rounded-xl p-8 md:p-10 anim">
+        <p class="font-display text-xl md:text-2xl leading-relaxed text-white/90">There is no way for the Bajan diaspora to pool its funds and invest them in ways that earn a return and build wealth for communities in Barbados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="max-w-4xl mx-auto px-8 py-20">
+    <div class="anim">
+      <p class="font-display text-3xl md:text-4xl font-bold text-sunset mb-8 leading-tight">The Bussa Fund is trying to change that.</p>
+      <p class="font-body text-lg text-night/70 leading-relaxed mb-6">Currently in a research phase, the Bussa Fund's goals are to raise investment capital from the Bajan diaspora to finance projects that contribute to a resilient, sustainable, and equitable Barbados. By supporting things like homeownership for working and middle class families, locally-owned businesses, and green infrastructure, the Bussa Fund aims to unleash the power of the diaspora to help Barbados thrive.</p>
+      <p class="font-body text-lg text-night/70 leading-relaxed mb-10">We are in the process of collecting non-binding commitments for investment to show that the Bajan diaspora is ready, willing, and able. <strong class="text-night font-semibold">If you are a member of the Bajan diaspora (or just someone who loves the island) and want to invest in a resilient, sustainable, and equitable Barbados, please fill out our interest form.</strong></p>
+      <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-sunset hover:bg-orange-600 text-white font-body font-semibold px-10 py-4 text-lg transition-all duration-200 hover:-translate-y-0.5">Fill Out the Interest Form &rarr;</button>
+    </div>
+  </section>
+
+  <footer class="text-center py-8 text-sm text-night/30 font-body border-t border-night/5">
+    &copy; 2025 The Bussa Fund
+  </footer>
+
+  <script src="https://tally.so/widgets/embed.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('vis'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.anim, .anim-left').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

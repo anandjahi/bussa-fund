@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bussa Fund</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            marine: '#1c2541',
+            teal: '#0a9396',
+            aqua: '#94d2bd',
+            hibiscus: '#d62828',
+            coral: '#e76f51',
+            warmwhite: '#faf8f5',
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .hero-gradient {
+      background: linear-gradient(160deg, #0b132b 0%, #1c2541 40%, #0a9396 100%);
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+    }
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .slide-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .slide-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .slide-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body class="bg-warmwhite text-midnight antialiased">
+
+  <!-- V2 Option 1: Revised Option 3 — "Bold Editorial Refined" -->
+  <!-- Fixes: consistent max-w-4xl alignment, images breaking up dark sections, scroll animations -->
+
+  <header class="hero-gradient text-white min-h-[80vh] flex items-center relative overflow-hidden">
+    <!-- Background illustration: Barbados outline -->
+    <svg class="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.06] h-[120%]" viewBox="0 0 200 500" fill="white">
+      <path d="M 18.6,225.9 L 19.2,262.5 L 28.0,285.5 L 26.1,290.7 L 29.9,293.1 L 26.0,293.2 L 26.5,297.6 L 24.0,293.0 L 24.4,296.8 L 41.7,305.3 L 39.6,315.6 L 77.3,327.3 L 92.4,327.1 L 97.5,330.6 L 101.9,340.6 L 106.6,342.6 L 124.2,336.9 L 132.0,324.9 L 138.4,324.5 L 163.2,305.3 L 182.3,279.2 L 188.3,266.2 L 188.8,254.0 L 181.1,245.8 L 171.1,245.8 L 160.2,231.4 L 152.7,234.0 L 145.2,226.8 L 138.3,224.9 L 136.7,220.0 L 131.2,219.9 L 121.3,210.8 L 104.4,203.0 L 76.6,160.8 L 74.7,150.9 L 67.2,139.7 L 70.1,137.8 L 66.6,134.8 L 68.1,132.4 L 39.4,110.0 L 20.8,116.7 L 10.0,133.6 L 11.0,152.7 L 14.6,167.9 L 17.3,169.2 L 14.5,185.5 L 18.6,225.9 Z"/>
+    </svg>
+    <!-- Decorative wave lines -->
+    <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 Q180,20 360,60 Q540,100 720,60 Q900,20 1080,60 Q1260,100 1440,60 L1440,120 L0,120 Z" fill="#faf8f5" opacity="0.1"/>
+    </svg>
+
+    <div class="max-w-4xl mx-auto px-8 py-20 relative z-10 w-full">
+      <!-- Logo -->
+      <div class="mb-12 fade-in visible">
+        <svg viewBox="0 0 200 50" class="w-40">
+          <g transform="translate(0,25)">
+            <path d="M0,-8 Q5,-14 10,-8 Q15,-2 20,-8" stroke="#0a9396" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M0,0 Q5,-6 10,0 Q15,6 20,0" stroke="#e76f51" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M0,8 Q5,2 10,8 Q15,14 20,8" stroke="#94d2bd" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+      <h1 class="font-display text-6xl md:text-8xl lg:text-9xl font-black leading-[0.92] mb-8">The<br>Bussa<br>Fund</h1>
+      <div class="w-20 h-1 bg-hibiscus mb-6"></div>
+      <p class="font-display text-xl md:text-2xl text-white/70 italic max-w-lg">Unleashing the power of the diaspora to invest in a resilient, sustainable, and equitable Barbados</p>
+    </div>
+  </header>
+
+  <!-- Pitch -->
+  <section class="max-w-4xl mx-auto px-8 py-20">
+    <div class="fade-up">
+      <p class="font-body text-xl text-midnight/70 leading-relaxed mb-6">By supporting initiatives like homeownership for working and middle class families, locally-owned businesses, and green infrastructure, the Bussa Fund aims to unleash the power of the diaspora to help Barbados thrive.</p>
+      <p class="font-body text-xl text-midnight/70 leading-relaxed mb-10">If you are a member of the Bajan diaspora (or just someone who loves the island) and want to invest in a resilient, sustainable, and equitable Barbados, please fill out our interest form.</p>
+      <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-hibiscus hover:bg-red-700 text-white font-body font-semibold px-10 py-4 text-lg transition-all duration-200 hover:-translate-y-0.5">Fill Out the Interest Form &rarr;</button>
+    </div>
+  </section>
+
+  <!-- Illustration break: Flying fish + waves -->
+  <div class="max-w-4xl mx-auto px-8 fade-in">
+    <svg viewBox="0 0 900 100" class="w-full" preserveAspectRatio="xMidYMid meet">
+      <path d="M0,50 Q100,20 200,50 Q300,80 400,50 Q500,20 600,50 Q700,80 800,50 Q850,35 900,50" stroke="#0a9396" stroke-width="1.5" fill="none" opacity="0.3"/>
+      <path d="M0,60 Q100,30 200,60 Q300,90 400,60 Q500,30 600,60 Q700,90 800,60 Q850,45 900,60" stroke="#94d2bd" stroke-width="1" fill="none" opacity="0.2"/>
+      <!-- Flying fish -->
+      <g transform="translate(420,25)" fill="#0a9396" opacity="0.4">
+        <path d="M-8,4 Q-3,-6 6,-2 Q9,-1 10,1 L6,4 Q3,6 -1,6 Z"/>
+        <path d="M-3,-1 Q-6,-10 1,-7 Q4,-6 3,-1" opacity="0.7"/>
+        <path d="M4,0 Q7,-7 9,-4 Q8,-2 6,0" opacity="0.7"/>
+      </g>
+      <g transform="translate(650,35) scale(-1,1)" fill="#e76f51" opacity="0.3">
+        <path d="M-8,4 Q-3,-6 6,-2 Q9,-1 10,1 L6,4 Q3,6 -1,6 Z"/>
+        <path d="M-3,-1 Q-6,-10 1,-7 Q4,-6 3,-1" opacity="0.7"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Case: Two-column with dark section -->
+  <section class="bg-midnight text-white">
+    <div class="max-w-4xl mx-auto px-8 py-20">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div class="slide-left">
+          <h2 class="font-display text-4xl md:text-5xl font-black leading-tight mb-8">Our dollars could be doing more.</h2>
+          <p class="font-body text-lg text-white/60 leading-relaxed">Every year, the Bajan diaspora sends over $100 million to Barbados. These gifts are a critical lifeline to the island, but they have limitations.</p>
+        </div>
+        <div class="space-y-6 slide-right">
+          <div class="border-l-2 border-teal pl-6">
+            <p class="font-body text-white/70 leading-relaxed">Instead of going towards things that build generational wealth and economic self-sufficiency almost all remittances go towards covering everyday expenses.</p>
+          </div>
+          <div class="border-l-2 border-teal pl-6">
+            <p class="font-body text-white/70 leading-relaxed">Gifts sent home reduce the Bajan diaspora's ability to save, invest, and build generational wealth ourselves.</p>
+          </div>
+          <div class="border-l-2 border-teal pl-6">
+            <p class="font-body text-white/70 leading-relaxed">Individual remittances are just that: individual. Rather than pooling our resources and achieving economies of scale, each family is left to fend for themselves.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image break: Sugarcane / palm illustration -->
+  <div class="bg-midnight">
+    <div class="max-w-4xl mx-auto px-8 fade-in">
+      <svg viewBox="0 0 900 120" class="w-full" preserveAspectRatio="xMidYMid meet">
+        <!-- Sugar cane stalks -->
+        <g opacity="0.15">
+          <g transform="translate(100,120)">
+            <line x1="0" y1="0" x2="5" y2="-100" stroke="#94d2bd" stroke-width="3"/>
+            <path d="M5,-40 Q15,-50 5,-55" stroke="#94d2bd" stroke-width="1.5" fill="none"/>
+            <path d="M5,-65 Q-5,-75 5,-80" stroke="#94d2bd" stroke-width="1.5" fill="none"/>
+          </g>
+          <g transform="translate(130,120)">
+            <line x1="0" y1="0" x2="-3" y2="-90" stroke="#94d2bd" stroke-width="2.5"/>
+            <path d="M-3,-35 Q-13,-45 -3,-50" stroke="#94d2bd" stroke-width="1.5" fill="none"/>
+            <path d="M-3,-60 Q7,-70 -3,-75" stroke="#94d2bd" stroke-width="1.5" fill="none"/>
+          </g>
+          <g transform="translate(750,120)">
+            <line x1="0" y1="0" x2="3" y2="-105" stroke="#e76f51" stroke-width="3"/>
+            <path d="M3,-45 Q13,-55 3,-60" stroke="#e76f51" stroke-width="1.5" fill="none"/>
+            <path d="M3,-70 Q-7,-80 3,-85" stroke="#e76f51" stroke-width="1.5" fill="none"/>
+          </g>
+          <g transform="translate(780,120)">
+            <line x1="0" y1="0" x2="-2" y2="-85" stroke="#e76f51" stroke-width="2.5"/>
+            <path d="M-2,-30 Q-12,-40 -2,-45" stroke="#e76f51" stroke-width="1.5" fill="none"/>
+          </g>
+        </g>
+        <!-- Windmill -->
+        <g transform="translate(450,60)" opacity="0.12">
+          <g fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+            <path d="M0,0 Q-8,-25 0,-22"/>
+            <path d="M0,0 Q25,-8 22,0"/>
+            <path d="M0,0 Q8,25 0,22"/>
+            <path d="M0,0 Q-25,8 -22,0"/>
+          </g>
+          <circle cx="0" cy="0" r="3" fill="white"/>
+          <path d="M-5,5 L-3,35 L3,35 L5,5" fill="none" stroke="white" stroke-width="1.5"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Teal callout band -->
+  <section class="bg-teal text-white">
+    <div class="max-w-4xl mx-auto px-8 py-16">
+      <p class="font-display text-2xl md:text-3xl font-bold leading-relaxed text-center fade-up">There is no way for the Bajan diaspora to pool its funds and invest them in ways that earn a return and build wealth for communities in Barbados.</p>
+    </div>
+  </section>
+
+  <!-- Final section -->
+  <section class="max-w-4xl mx-auto px-8 py-20">
+    <div class="fade-up">
+      <p class="font-display text-3xl md:text-4xl font-black text-teal mb-8">The Bussa Fund is trying to change that.</p>
+      <p class="font-body text-lg text-midnight/70 leading-relaxed mb-6">Currently in a research phase, the Bussa Fund's goals are to raise investment capital from the Bajan diaspora to finance projects that contribute to a resilient, sustainable, and equitable Barbados. By supporting things like homeownership for working and middle class families, locally-owned businesses, and green infrastructure, the Bussa Fund aims to unleash the power of the diaspora to help Barbados thrive.</p>
+      <p class="font-body text-lg text-midnight/70 leading-relaxed mb-10">We are in the process of collecting non-binding commitments for investment to show that the Bajan diaspora is ready, willing, and able. <strong class="text-midnight font-semibold">If you are a member of the Bajan diaspora (or just someone who loves the island) and want to invest in a resilient, sustainable, and equitable Barbados, please fill out our interest form.</strong></p>
+      <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-hibiscus hover:bg-red-700 text-white font-body font-semibold px-10 py-4 text-lg transition-all duration-200 hover:-translate-y-0.5">Fill Out the Interest Form &rarr;</button>
+    </div>
+  </section>
+
+  <footer class="text-center py-8 text-sm text-midnight/30 font-body border-t border-midnight/10">
+    &copy; 2025 The Bussa Fund
+  </footer>
+
+  <script src="https://tally.so/widgets/embed.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-up, .fade-in, .slide-left, .slide-right').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

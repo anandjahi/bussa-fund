@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bussa Fund</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#1a1a2e',
+            ocean: '#16213e',
+            wave: '#0f3460',
+            turquoise: '#00b4d8',
+            seafoam: '#90e0ef',
+            papaya: '#e76f51',
+            lemon: '#f4d35e',
+            shell: '#fdf6ec',
+          },
+          fontFamily: {
+            display: ['DM Serif Display', 'Georgia', 'serif'],
+            body: ['DM Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-ink antialiased">
+
+  <!-- Option 4: "Modern Caribbean" -->
+  <!-- Bright turquoise + papaya, card-based layout, modern sans-serif body, playful but polished -->
+
+  <header class="bg-ink text-white">
+    <div class="max-w-5xl mx-auto px-6 pt-8 pb-20 md:pb-28">
+      <nav class="flex items-center justify-between mb-20">
+        <span class="font-display text-lg">The Bussa Fund</span>
+        <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="font-body text-sm font-medium bg-papaya hover:bg-orange-600 text-white px-5 py-2.5 rounded-full transition-colors">Get Involved</button>
+      </nav>
+      <div class="max-w-3xl">
+        <div class="inline-block bg-turquoise/20 text-turquoise font-body text-sm font-medium px-4 py-1.5 rounded-full mb-8">Currently in Research Phase</div>
+        <h1 class="font-display text-5xl md:text-7xl leading-[1.1] mb-6">Unleashing the power of the diaspora</h1>
+        <p class="font-body text-xl text-white/60 max-w-xl">To invest in a resilient, sustainable, and equitable Barbados</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="relative -mt-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="bg-shell rounded-2xl shadow-xl p-8 md:p-12">
+        <p class="font-body text-lg text-ink/70 leading-relaxed mb-4">By supporting initiatives like homeownership for working and middle class families, locally-owned businesses, and green infrastructure, the Bussa Fund aims to unleash the power of the diaspora to help Barbados thrive.</p>
+        <p class="font-body text-lg text-ink/70 leading-relaxed mb-8">If you are a member of the Bajan diaspora (or just someone who loves the island) and want to invest in a resilient, sustainable, and equitable Barbados, please fill out our interest form.</p>
+        <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-papaya hover:bg-orange-600 text-white font-body font-semibold px-8 py-3.5 rounded-xl text-lg transition-all duration-200 shadow-md hover:shadow-lg">Fill Out the Interest Form</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-20">
+    <div class="flex items-center gap-4 mb-10">
+      <div class="w-12 h-12 rounded-xl bg-turquoise/10 flex items-center justify-center">
+        <span class="text-turquoise text-2xl">$</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl">Our dollars could be doing more.</h2>
+    </div>
+
+    <p class="font-body text-lg text-ink/60 leading-relaxed mb-8 max-w-2xl">Every year, the Bajan diaspora sends over $100 million to Barbados. These gifts are a critical lifeline to the island, but they have limitations.</p>
+
+    <div class="grid md:grid-cols-3 gap-4 mb-12">
+      <div class="bg-gradient-to-br from-turquoise/5 to-turquoise/10 rounded-xl p-6 border border-turquoise/10">
+        <div class="text-turquoise font-display text-4xl mb-3">01</div>
+        <p class="font-body text-ink/70 leading-relaxed">Instead of going towards things that build generational wealth and economic self-sufficiency almost all remittances go towards covering everyday expenses.</p>
+      </div>
+      <div class="bg-gradient-to-br from-papaya/5 to-papaya/10 rounded-xl p-6 border border-papaya/10">
+        <div class="text-papaya font-display text-4xl mb-3">02</div>
+        <p class="font-body text-ink/70 leading-relaxed">Gifts sent home reduce the Bajan diaspora's ability to save, invest, and build generational wealth ourselves.</p>
+      </div>
+      <div class="bg-gradient-to-br from-lemon/10 to-lemon/20 rounded-xl p-6 border border-lemon/20">
+        <div class="text-lemon font-display text-4xl mb-3">03</div>
+        <p class="font-body text-ink/70 leading-relaxed">Individual remittances are just that: individual. Rather than pooling our resources, each family is left to fend for themselves.</p>
+      </div>
+    </div>
+
+    <div class="bg-ink rounded-2xl p-8 md:p-10 mb-12">
+      <p class="font-display text-xl md:text-2xl text-white leading-relaxed">There is no way for the Bajan diaspora to pool its funds and invest them in ways that earn a return and build wealth for communities in Barbados.</p>
+    </div>
+
+    <h3 class="font-display text-3xl text-papaya mb-6">The Bussa Fund is trying to change that.</h3>
+    <p class="font-body text-lg text-ink/60 leading-relaxed mb-6">Currently in a research phase, the Bussa Fund's goals are to raise investment capital from the Bajan diaspora to finance projects that contribute to a resilient, sustainable, and equitable Barbados. By supporting things like homeownership for working and middle class families, locally-owned businesses, and green infrastructure, the Bussa Fund aims to unleash the power of the diaspora to help Barbados thrive.</p>
+    <p class="font-body text-lg text-ink/60 leading-relaxed mb-10">We are in the process of collecting non-binding commitments for investment to show that the Bajan diaspora is ready, willing, and able. <strong class="text-ink font-semibold">If you are a member of the Bajan diaspora (or just someone who loves the island) and want to invest in a resilient, sustainable, and equitable Barbados, please fill out our interest form.</strong></p>
+    <div class="text-center">
+      <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-papaya hover:bg-orange-600 text-white font-body font-semibold px-10 py-4 rounded-xl text-lg transition-all duration-200 shadow-md hover:shadow-lg">Fill Out the Interest Form</button>
+    </div>
+  </section>
+
+  <footer class="text-center py-8 text-sm text-ink/30 font-body border-t border-ink/5">
+    &copy; 2025 The Bussa Fund
+  </footer>
+
+  <script src="https://tally.so/widgets/embed.js"></script>
+</body>
+</html>
