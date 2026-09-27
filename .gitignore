@@ -1,0 +1,14 @@
+# Only the live website is published to GitHub. Everything else in this
+# folder (copy doc, archive, design comps, unused photos) stays local.
+# When the site starts using a new photo, add a matching "!/Pics/..." line.
+/*
+!/.gitignore
+!/index.html
+!/CNAME
+!/Pics/
+/Pics/*
+!/Pics/Bussa 2.JPG
+!/Pics/Farmers Market.jpg
+!/Pics/Soursop.jpg
+!/Pics/headshot 3.jpg
+!/Pics/Sugarcane and mill 2.jpg

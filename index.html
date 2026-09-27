@@ -60,7 +60,8 @@
     <div class="max-w-5xl mx-auto px-8 py-4 flex items-center justify-between">
       <a href="#" class="font-display text-xl text-night">The Bussa Fund</a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="#about" class="font-body text-sm font-medium text-night/60 hover:text-night transition-colors">About the Bussa Fund</a>
+        <a href="#about" class="font-body text-sm font-medium text-night/60 hover:text-night transition-colors">About</a>
+        <a href="#why-barbados" class="font-body text-sm font-medium text-night/60 hover:text-night transition-colors">Why Barbados</a>
         <a href="#beyond-remittances" class="font-body text-sm font-medium text-night/60 hover:text-night transition-colors">Beyond Remittances</a>
         <a href="#founder" class="font-body text-sm font-medium text-night/60 hover:text-night transition-colors">About the Founder</a>
         <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-coral hover:bg-coral/90 text-white font-body font-semibold text-sm px-5 py-2.5 transition-all duration-200">Fill Out the Interest Form</button>
@@ -72,7 +73,8 @@
     </div>
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden px-8 pb-4">
-      <a href="#about" class="block py-2 font-body text-sm text-night/60 hover:text-night">About the Bussa Fund</a>
+      <a href="#about" class="block py-2 font-body text-sm text-night/60 hover:text-night">About</a>
+      <a href="#why-barbados" class="block py-2 font-body text-sm text-night/60 hover:text-night">Why Barbados</a>
       <a href="#beyond-remittances" class="block py-2 font-body text-sm text-night/60 hover:text-night">Beyond Remittances</a>
       <a href="#founder" class="block py-2 font-body text-sm text-night/60 hover:text-night">About the Founder</a>
       <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="mt-2 bg-coral hover:bg-coral/90 text-white font-body font-semibold text-sm px-5 py-2.5 w-full transition-all duration-200">Fill Out the Interest Form</button>
@@ -132,6 +134,28 @@
   </section>
 
 
+  <!-- Why Barbados — centered full-bleed background image -->
+  <section id="why-barbados" class="bg-white scroll-mt-16 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <img src="Pics/Sugarcane and mill 2.jpg" alt="" class="w-full h-full object-cover object-[50%_35%]" style="opacity: 0.22; mask-image: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 80%); -webkit-mask-image: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 80%);">
+    </div>
+    <div class="max-w-5xl mx-auto px-8 py-20 relative z-10" style="text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 24px #fff;">
+      <p class="font-body text-coral font-semibold tracking-[0.15em] uppercase text-sm mb-4 anim">Why Barbados</p>
+      <p class="font-display text-2xl md:text-3xl text-night leading-snug mb-8 anim">What happens in Barbados reverberates far and wide.</p>
+      <div class="anim d1">
+        <p class="font-body text-lg text-night/70 leading-relaxed mb-6"><strong class="text-night font-semibold">Barbados was the world&rsquo;s first &ldquo;slave society,&rdquo;</strong> a society in which slavery is the foundational element upon which the economy, legal and political systems, and culture are built. Plantation slavery was &ldquo;perfected&rdquo; in Barbados, and then exported throughout the hemisphere.</p>
+        <p class="font-body text-lg text-night/70 leading-relaxed mb-6">In 1816, <strong class="text-night font-semibold">led by a man named Bussa, thousands of Barbadian slaves revolted against this brutal regime</strong>. At the time, Bussa&rsquo;s was the largest slave rebellion to take place in the British colonies, it inspired similar rebellions in the region, and helped pave the way for the abolition of slavery throughout the British Empire.</p>
+        <p class="font-body text-lg text-coral leading-relaxed mb-6"><strong class="font-semibold">Barbados is the heir of this complex legacy.</strong></p>
+        <p class="font-body text-lg text-night/70 leading-relaxed mb-6">Today, Barbados is a global leader for climate and economic justice. But <strong class="text-night font-semibold">vestiges of slavery and colonialism still loom large.</strong> Deeply entrenched inequality and concentration of wealth contribute to an over-reliance on tourism, under-investment in local food systems, vulnerability to climate disaster, and other challenges.</p>
+        <p class="font-body text-lg text-night/70 leading-relaxed"><strong class="text-night font-semibold">The Bussa Fund aims to support the countless Barbadians charting a different path, one marked by <span class="text-teal">resilience</span>, <span class="text-teal">sustainability</span>, and <span class="text-teal">equity</span>.</strong></p>
+      </div>
+      <div class="mt-10 slide-l">
+        <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-coral hover:bg-coral/90 text-white font-body font-semibold text-base px-6 py-3.5 w-full md:w-auto md:px-8 md:py-4 md:text-lg transition-all duration-200">Fill Out the Interest Form &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+
   <!-- Beyond Remittances: Compact two-column -->
   <section id="beyond-remittances" class="bg-night text-white scroll-mt-16 relative overflow-hidden">
     <!-- Soursop — mobile: top half -->
@@ -146,7 +170,7 @@
       <p class="font-body text-coral font-semibold tracking-[0.15em] uppercase text-sm mb-6 slide-l">Beyond Remittances</p>
       <div class="grid md:grid-cols-2 gap-16 items-start">
         <div class="slide-l">
-          <h2 class="font-display text-4xl md:text-5xl leading-tight mb-6">Our dollars could be doing more.</h2>
+          <h2 class="font-display text-4xl md:text-5xl leading-tight mb-6">Our dollars could do more.</h2>
           <p class="font-body text-lg text-white/70 leading-relaxed">Every year, the Barbadian diaspora sends over $100 million to Barbados. These gifts are a critical lifeline to the island, but they have limitations.</p>
         </div>
         <div class="space-y-5 slide-r">
@@ -161,7 +185,7 @@
           </div>
         </div>
       </div>
-      <p class="font-body text-lg text-white/70 leading-relaxed mt-10">The Bussa Fund aims to address these shortcomings by empowering the Barbadian diaspora to pool its resources and invest in projects that build a resilient, sustainable, and equitable Barbados.</p>
+      <p class="font-body text-lg text-white/70 leading-relaxed mt-10">The Bussa Fund aims to address these shortcomings by empowering the Barbadian diaspora to pool its resources and invest in projects that build a <span class="text-teal">resilient</span>, <span class="text-teal">sustainable</span>, and <span class="text-teal">equitable</span> Barbados.</p>
       <div class="mt-10 slide-l">
         <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-coral hover:bg-coral/90 text-white font-body font-semibold text-base px-6 py-3.5 w-full md:w-auto md:px-8 md:py-4 md:text-lg transition-all duration-200">Fill Out the Interest Form &rarr;</button>
       </div>
@@ -176,7 +200,7 @@
       <div class="hidden md:grid md:grid-cols-[1fr_280px] gap-10 items-start anim">
         <div>
           <p class="font-display text-2xl md:text-3xl text-night leading-snug mb-8">Anand Jahi</p>
-          <p class="font-body text-lg text-night/70 leading-relaxed mb-6">With over 20 years of experience in the social impact and non-profit sectors, Anand Jahi (n&eacute;e Goodridge) has spent his career supporting working and middle class families to build wealth by leveraging strategies that benefit the environment and broader community. As an independent consultant, Anand has advised philanthropic foundations, mission-driven businesses, community loan funds, and national non-profit organizations.</p>
+          <p class="font-body text-lg text-night/70 leading-relaxed mb-6">With over 20 years of experience in the social impact and non-profit sectors, Anand Jahi (n&eacute;e Goodridge) has spent his career supporting working and middle class families build wealth by leveraging strategies that benefit the environment and broader community. As an independent consultant, Anand has advised philanthropic foundations, mission-driven businesses, community loan funds, and national non-profit organizations.</p>
           <p class="font-body text-lg text-night/70 leading-relaxed">The descendant of Barbadian immigrants to the United States, Anand is passionate about building bridges between the island and the diaspora that are rooted in mutual benefit, respect, and justice.</p>
         </div>
         <div class="overflow-hidden rounded-lg">
@@ -189,7 +213,7 @@
         <div class="overflow-hidden rounded-lg float-left w-40 mr-4 mb-2">
           <img src="Pics/headshot 3.jpg" alt="Anand Jahi" class="w-full">
         </div>
-        <p class="font-body text-lg text-night/70 leading-relaxed mb-6">With over 20 years of experience in the social impact and non-profit sectors, Anand Jahi (n&eacute;e Goodridge) has spent his career supporting working and middle class families to build wealth by leveraging strategies that benefit the environment and broader community. As an independent consultant, Anand has advised philanthropic foundations, mission-driven businesses, community loan funds, and national non-profit organizations.</p>
+        <p class="font-body text-lg text-night/70 leading-relaxed mb-6">With over 20 years of experience in the social impact and non-profit sectors, Anand Jahi (n&eacute;e Goodridge) has spent his career supporting working and middle class families build wealth by leveraging strategies that benefit the environment and broader community. As an independent consultant, Anand has advised philanthropic foundations, mission-driven businesses, community loan funds, and national non-profit organizations.</p>
         <p class="font-body text-lg text-night/70 leading-relaxed">The descendant of Barbadian immigrants to the United States, Anand is passionate about building bridges between the island and the diaspora that are rooted in mutual benefit, respect, and justice.</p>
       </div>
     </div>
