@@ -105,9 +105,8 @@
     .stage.done .phrase.final { margin-top: 0; }
 
     .final .prefix { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.9s cubic-bezier(.65,0,.35,1), opacity 0.5s ease; }
-    .final .keep { display: block; transition: color 1s ease 0.3s; }
+    .final .keep { display: block; }
     .final.resolve .prefix { grid-template-rows: 0fr; opacity: 0; }
-    .final.resolve .keep { color: #e76f51; }
     #sequence.instant, #sequence.instant * { transition: none !important; }
 
     .after > * { opacity: 0; transform: translateY(16px); transition: opacity 0.8s ease, transform 0.8s ease; }
