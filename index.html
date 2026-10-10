@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Bussa Fund</title>
-  <meta name="description" content="Unleashing the power of the diaspora to invest in a resilient, sustainable, and equitable Barbados.">
+  <meta name="description" content="Unleashing the power of the diaspora to invest in sustainability, resilience, and community wealth in Barbados.">
   <link rel="icon" href="data:,">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -86,8 +86,9 @@
     .hero-bim.show { opacity: 1; transform: scale(1); }
 
     /* "Plans to support" sequence: bulleted examples load one under another,
-       then the bullets fold away and the last line resolves to "community
-       wealth and resilience" directly beneath the lead line. */
+       then the bullets fold away and the last line resolves to "sustainability,
+       resilience, and community wealth in Barbados" directly beneath the lead
+       line. */
     .lead { opacity: 0; transform: translateY(20px); transition: opacity 0.9s ease, transform 0.9s ease; }
     .lead.show { opacity: 1; transform: translateY(0); }
     .phrase { display: grid; grid-template-rows: 1fr; opacity: 0; transform: translateY(0.35em); transition: opacity 0.7s ease, transform 0.7s ease, grid-template-rows 0.9s cubic-bezier(.65,0,.35,1), margin-bottom 0.9s cubic-bezier(.65,0,.35,1); }
@@ -176,7 +177,7 @@
           Unleashing the<br>power of the<br><em class="text-teal">diaspora</em>
         </h1>
         <div class="w-12 h-0.5 bg-coral mb-5 hero-el" id="h3"></div>
-        <p class="font-body text-lg soft max-w-md leading-relaxed hero-el" id="h4">To invest in a resilient, sustainable, and equitable Barbados</p>
+        <p class="font-body text-lg soft leading-relaxed [text-wrap:balance] hero-el" id="h4">To invest in sustainability, resilience, and community&nbsp;wealth<br>in&nbsp;Barbados</p>
       </div>
     </header>
   </div>
@@ -194,7 +195,7 @@
       <div class="divider border-t rule"></div>
       <section id="support" class="pt-20 md:pt-28 pb-24 md:pb-32">
         <p class="font-body text-coral font-semibold tracking-[0.2em] uppercase text-sm mb-6 md:mb-8 rise">About</p>
-        <p class="sr-only">The Bussa Fund plans to support homeownership for working and middle class families, locally-owned businesses, green infrastructure, and other initiatives that build community wealth and resilience.</p>
+        <p class="sr-only">The Bussa Fund plans to support homeownership for working and middle class families, locally-owned businesses, green infrastructure, and other initiatives that build sustainability, resilience, and community wealth in Barbados.</p>
         <div id="sequence" aria-hidden="true" class="max-w-3xl">
           <p id="lead" class="lead font-display text-3xl md:text-5xl leading-[1.12]">The Bussa Fund<br class="md:hidden"> plans to support</p>
           <div id="stage" class="stage font-display italic text-3xl md:text-5xl leading-[1.12] text-teal mt-1">
@@ -203,13 +204,13 @@
             <span class="phrase"><span>green infrastructure</span></span>
             <span class="phrase final"><span>
               <span class="prefix"><span>and other initiatives that&nbsp;build</span></span>
-              <span class="keep">community wealth and resilience</span>
+              <span class="keep">sustainability, resilience, and community wealth in&nbsp;Barbados</span>
             </span></span>
           </div>
         </div>
         <div id="after" class="after max-w-xl mt-10 md:mt-12">
           <p class="font-body text-lg muted leading-relaxed mb-6">Currently in pre-launch, we are collecting non-binding commitments for investment to show that the Barbadian diaspora is ready, willing, and able to invest.</p>
-          <p class="font-body text-lg leading-relaxed mb-10"><strong class="ink font-semibold">If you are a member of the Barbadian diaspora (or just someone who loves the island) and want to invest in a resilient, sustainable, and equitable Barbados, please fill out our interest form.</strong></p>
+          <p class="font-body text-lg leading-relaxed mb-10"><strong class="ink font-semibold">If you are a member of the Barbadian diaspora (or just someone who loves the island) and want to invest in sustainability, resilience, and community wealth in Barbados, please fill out our interest form.</strong></p>
           <div>
             <button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-coral hover:bg-coral/90 text-white font-body font-semibold text-base px-6 py-3.5 w-full md:w-auto md:px-8 md:py-4 md:text-lg transition-all duration-200">Fill Out the Interest Form &rarr;</button>
           </div>
@@ -265,7 +266,7 @@
                 <p>Barbados was the world’s first “slave society,” a society in which slavery is the foundational element upon which the economy, legal and political systems, and culture are built. The plantation slavery system was “perfected” in Barbados, and then exported throughout the Americas.</p>
                 <p>In 1816, led by a man named Bussa, thousands of Barbadian slaves revolted against this brutal regime. At the time, Bussa’s was the largest slave rebellion to take place in the British colonies, it inspired similar rebellions in the region, and helped pave the way for the abolition of slavery throughout the British Empire.</p>
                 <p>Today, Barbados is a global leader for climate and economic justice. But vestiges of slavery and colonialism still loom large. Deeply entrenched inequality and concentration of wealth contribute to an over-reliance on tourism, under-investment in local food systems, vulnerability to climate disaster, and other challenges.</p>
-                <p>The Bussa Fund aims to support the countless Barbadians charting a different path, one marked by resilience, sustainability, and equity.</p>
+                <p>The Bussa Fund aims to support the countless Barbadians charting a different path, one marked by sustainability, resilience, and community wealth.</p>
               </div>
             </div>
           </div>
@@ -341,6 +342,26 @@
           </div>
         </div>
 
+        <div class="faq-item rise border-b rule" id="what-we-mean">
+          <h2>
+            <button class="faq-q w-full flex items-center justify-between gap-6 py-6 md:py-7 text-left" aria-expanded="false" aria-controls="a-what-we-mean">
+              <span class="q-text font-display text-2xl md:text-3xl leading-snug ink">What do you mean by sustainability, resilience, and community wealth?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h2>
+          <div class="faq-a" id="a-what-we-mean" role="region">
+            <div>
+              <div class="font-body text-lg muted leading-relaxed pb-8 pr-2 md:pr-16">
+                <ul class="space-y-4">
+                  <li class="border-l-2 border-teal pl-5"><strong class="text-teal font-semibold">Sustainability</strong> means meeting today’s needs without using up what future generations will depend on</li>
+                  <li class="border-l-2 border-teal pl-5"><strong class="text-teal font-semibold">Resilience</strong> means being able to recover quickly when hard times hit</li>
+                  <li class="border-l-2 border-teal pl-5"><strong class="text-teal font-semibold">Community wealth</strong> means that the people who live and work in a place own more of what gets built there, so profits and decision-making power stay in the community</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="faq-item rise border-b rule" id="other-diasporas">
           <h2>
             <button class="faq-q w-full flex items-center justify-between gap-6 py-6 md:py-7 text-left" aria-expanded="false" aria-controls="a-other-diasporas">
@@ -410,7 +431,7 @@
 
       <!-- Closing CTA -->
       <div class="max-w-2xl pt-24 pb-28">
-        <p class="font-display text-3xl md:text-4xl leading-snug mb-8 rise">Ready to invest in a <em class="text-teal">resilient, sustainable,</em> <em>and</em> <em class="text-teal">equitable</em> Barbados?</p>
+        <p class="font-display text-3xl md:text-4xl leading-snug mb-8 [text-wrap:balance] rise">Ready to invest in <em class="text-teal">sustainability, resilience,</em> <em>and</em> <em class="text-teal">community&nbsp;wealth</em> in&nbsp;Barbados?</p>
         <div class="rise"><button onclick="Tally.openPopup('xXgKjy', { width: 700 })" class="bg-coral hover:bg-coral/90 text-white font-body font-semibold text-base px-6 py-3.5 w-full md:w-auto md:px-8 md:py-4 md:text-lg transition-all duration-200">Fill Out the Interest Form &rarr;</button></div>
       </div>
     </div>
